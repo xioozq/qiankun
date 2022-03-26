@@ -1,11 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { name } = require('./package');
+const { host } = require('../host')
 
 module.exports = {
   entry: process.env.MODE === 'multiple' ? './multiple.js' : './index.js',
   devtool: 'source-map',
   devServer: {
     open: true,
+    host,
     port: '7099',
     clientLogLevel: 'warning',
     disableHostCheck: true,

@@ -1,4 +1,5 @@
 const { name } = require('./package');
+const { host } = require('../host')
 
 module.exports = {
   webpack: config => {
@@ -12,7 +13,7 @@ module.exports = {
 
   devServer: _ => {
     const config = _;
-
+    config.host = host;
     config.headers = {
       'Access-Control-Allow-Origin': '*',
     };
